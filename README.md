@@ -8,7 +8,7 @@ The model is developed using Python 3.9.12 in the JupyterLab 3.3.2 environment.
 
 ### 1. Content
 The repository is divided into two folders:
-- 'Code_hydrogen_paper.ipynb' containts the sample-code, simplified version of the version used to obtain the main result in the published article. 
+- `sample_code` containts the sample-code, simplified version of the version used to obtain the main result in the published article. 
 - (cita) containts instead the sample-datasets to run the code. (cita) (explain EMHIRES and the table)
 
 Lastly, the document (METADATA) presents all the information required to undestand the key parameters of the model.
