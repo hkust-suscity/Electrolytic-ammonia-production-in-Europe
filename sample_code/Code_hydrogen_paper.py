@@ -65,20 +65,20 @@ def calculate_energy_balance(i,dataset, IC_PV, IC_WT, IC_HGU_WE, IC_batt,IC_comp
 # Calculate the hourly renewable energy input to the system
     En_PV = IC_PV * CF_PV 
     En_WT = IC_WT * CF_WT 
-    En_total = En_PV + En_WT
+    En_total = En_PV + En_WT #energy from solar PV + WT
     En_grid = 0
 # Calculate hourly energy demand for the Ammonia plant
-    En_plant = Dh_H2 * En_HGU_WE
+    En_plant = Dh_H2 * En_HGU_WE #hourly energy required to synthesize 7.5 tons of H2
     IC_HGU_WE_kg = IC_HGU_WE/En_HGU_WE  # Electrolyzer installed capacity converted to effective kgs of H2
     En_after_H2_production = En_total - En_plant
     
     # The main if loop!
     # Case 1: we have an energy surplus in hour t
     if En_total >= En_plant:
-        FREECAP_battery = IC_batt - En_stor_batt
+        Free_capacity_batteries = IC_batt - En_stor_batt #capacity batteries unutilized and available for energy storage
         
         # Next, store the energy surplus in the battery 
-        if En_after_H2_production <= FREECAP_battery:  #check not fully charged 
+        if En_after_H2_production <= Free_capacity_batteries:  #check not fully charged 
             En_stor_batt += En_after_H2_production
             En_after_battery = 0
         else:  # battery is filled during the charging process
