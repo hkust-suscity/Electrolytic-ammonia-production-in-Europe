@@ -8,8 +8,8 @@ The model is developed using Python 3.9.12 in the JupyterLab 3.3.2 environment.
 
 ### 1. Content
 The repository is divided into two folders:
-- `sample_code` containts the sample-code, simplified version of the version used to obtain the main result in the published article. 
-- (cita) containts instead the sample-datasets to run the code. (cita) (explain EMHIRES and the table)
+- `sample_code` containts the sample codes (`Code_hydrogen_paper.ipynb` and `Code_hydrogen_paper.py`), simplified version of the code used to obtain the main result in the published article. 
+- `sample_database` containts instead the sample datasets to run the code. `input_table_sample` presents the value of the input parameters used in the optimization model, while `EMHIRES_dataset_sample` contains a sample of the EMHIRES dataset providing 1-year hourly PV and wind turbine capacity factors.  
 
 Lastly, the document (METADATA) presents all the information required to undestand the key parameters of the model.
 
@@ -19,5 +19,9 @@ For any queries or feedback contact Stefano Mingolla: smingolla@connect.ust.hk o
 
 ### 3. Data Availability
 
-The code and datasets provided are simplified version of the material used in the article (mention). The purpose of the sample code is to highlight the mechanisms of the developed model.
+The code and datasets provided are simplified version of the material used in the article (mention). The purpose of the sample code is to highlight the mechanisms of the developed model. Sample data and code referred to the following 4 regions: 
+- `ES42`, Castile-La Mancha (Spain),
+- `ITH5`, Ferrara (Italy),
+- `NO03`, Sør-Østlandet (Norway),
+- `UKC1`, Tees Valley and Durham (United Kingdom).
 All the data and complete code related to this paper may be requested from the corresponding authors (cite). 
