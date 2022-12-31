@@ -1,18 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # Import libraries
 import pandas as pd
 import numpy as np
 from scipy.optimize import differential_evolution
 from scipy.optimize import minimize
 from scipy.optimize import Bounds
-
-
-# In[ ]:
 
 
 # Import dataframes
@@ -22,9 +13,6 @@ df.set_index("Input_parameters", inplace = True)
 
 # Import EMHIRES dataframe
 df_EMHIRES = pd.read_csv(r'EMHIRES_dataset_sample.csv', index_col = 0) 
-
-
-# In[ ]:
 
 
 # Select scenario
@@ -59,9 +47,6 @@ else:
     threshold = 9.5 
 
 
-# In[ ]:
-
-
 # Choose NUTS-2 level region to analyze
 # Note, in this test code you can choose within the following 4 regions: ES42, ITH5, NO03, UKC1
 CHOOSE_REGION = "ITH5"
@@ -70,9 +55,7 @@ for i in ["ES","IT","NO","UK"]:
         COUNTRY = i
 
 
-# In[ ]:
-
-
+# Define energy balance
 def calculate_energy_balance(i,dataset, IC_PV, IC_WT, IC_HGU_WE, IC_batt,IC_comp, IC_h2stor, En_stor_batt, kg_stor_h2, En_comp, En_HGU_WE, Dh_H2):
 
 # Import capacity factor PV and WT from EMHIRES sample dataset "df_EMHIRES"
@@ -134,9 +117,7 @@ def calculate_energy_balance(i,dataset, IC_PV, IC_WT, IC_HGU_WE, IC_batt,IC_comp
     return En_stor_batt, kg_stor_h2, En_grid, En_total, En_PV, En_WT
 
 
-# In[ ]:
-
-
+# define LCOH
 def calculate_capex(IC_PV, IC_WT, IC_HGU_WE, IC_batt, IC_comp, IC_h2stor, En_frac_grid, En_total, kg_stor_h2):
     # Utility-scale solar PV 
     A_tot = A_PV * IC_PV
@@ -178,9 +159,6 @@ def calculate_capex(IC_PV, IC_WT, IC_HGU_WE, IC_batt, IC_comp, IC_h2stor, En_fra
     return LCOH
 
 
-# In[ ]:
-
-
 #define variables
 # Hourly H2 demand
 Dh_H2 = float(df.loc[f"Dh_H2"]["Fixed"])
@@ -219,9 +197,7 @@ price_el_g_i = float(df.loc[f"price_el_g_i_{scenario}"][COUNTRY])
 CE_el_i = float(df.loc[f"CE_el_i_{scenario}"][COUNTRY]) 
 
 
-# In[ ]:
-
-
+# Define optimization
 def LCOH_optimization_test(x):
     # pull variables from input array
     print("new iteration")
@@ -278,19 +254,21 @@ def LCOH_optimization_test(x):
     
 
 
-# In[ ]:
+#first round of Differential Evolution (DE)
+min_ele_size = Dh_H2*En_HGU_WE
+
+bounds = Bounds([0,0,min_ele_size,0,0,0],[1E4,5E3,5E3,5E4,5E4,1E6])
+
+LCOH_vals = []
+res = differential_evolution(LCOH_optimization_test, bounds=bounds, popsize = 10)
 
 
-get_ipython().run_cell_magic('time', '', '#first round of Differential Evolution (DE)\nmin_ele_size = Dh_H2*En_HGU_WE\n\nbounds = Bounds([0,0,min_ele_size,0,0,0],[1E4,5E3,5E3,5E4,5E4,1E6])\n\nLCOH_vals = []\nres = differential_evolution(LCOH_optimization_test, bounds=bounds, popsize = 10)')
+#second round of Nelder-Mead using the results of the DE as "best guess" for the second optimization
+bounds = Bounds([0,0,min_ele_size,0,0,0],[1E10,1E10,1E10,1E10,1E10,1E10])
+x0 = np.array(res.x)
 
-
-# In[ ]:
-
-
-get_ipython().run_cell_magic('time', '', '#second round of Nelder-Mead using the results of the DE as "best guess" for the second optimization\nbounds = Bounds([0,0,min_ele_size,0,0,0],[1E10,1E10,1E10,1E10,1E10,1E10])\nx0 = np.array(res.x)\n\nLCOH_vals = []\nres = minimize(LCOH_optimization_test, x0, method=\'nelder-mead\', bounds=bounds, tol = 1E-15)')
-
-
-# In[ ]:
+LCOH_vals = []
+res = minimize(LCOH_optimization_test, x0, method='nelder-mead', bounds=bounds, tol = 1E-15)
 
 
 res.x
@@ -311,15 +289,5 @@ print(f"IC_H2_stor = {res.x[5]} kg H2")
 print(f"minimum LCOH = {res.fun} EUR/kg")
 
 
-# In[ ]:
-
-
 df_results = pd.DataFrame({"LCOH":[res.fun], "IC_PV":[res.x[0]], "IC_WT":[res.x[1]], "IC_HGU_WE":[res.x[2]], "IC_batt":[res.x[3]], "IC_comp":[res.x[4]], "IC_H2_stor":[res.x[5]]}, index = [CHOOSE_REGION])
 df_results
-
-
-# In[ ]:
-
-
-
-
