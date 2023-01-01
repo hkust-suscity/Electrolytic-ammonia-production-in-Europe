@@ -8,8 +8,8 @@ The model is developed using Python 3.9.12 in the JupyterLab 3.3.2 environment.
 
 ### 1. Content
 The repository is divided into two folders:
-- `sample_code` containts the sample codes (`Code_hydrogen_paper.ipynb` and `Code_hydrogen_paper.py`), simplified version of the code used to obtain the main result in the published article. 
-- `sample_database` containts instead the sample datasets to run the code. `input_table_sample` presents the value of the input parameters used in the optimization model, while `EMHIRES_dataset_sample` contains a sample of the EMHIRES[^1][^2] dataset providing 1-year hourly PV and wind turbine capacity factors.  
+- `sample_code` containts the sample codes (`Code_hydrogen_paper.ipynb` and `Code_hydrogen_paper.py`), simplified version of the code used to obtain the main result of the article in preparation for submission. 
+- `sample_database` containts instead the sample datasets to run the code. `input_table_sample` presents the value of the input parameters used in the optimization model, while `EMHIRES_dataset_sample` contains a sample of the EMHIRES[^1][^2] dataset providing 1-year hourly PV and wind turbine capacity factors. 
 
 Lastly, the document `METADATA.md` presents all the information required to undestand the key parameters of the model.
 
