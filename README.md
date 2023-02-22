@@ -1,4 +1,4 @@
-# Hydrogen paper sample Github page
+# Electrolysis Hydrogen Planning Analysis for Ammonia Plants In EU Github page
 
 This is the official code repository for the research article (cite name paper) in preparation for submission.
 
