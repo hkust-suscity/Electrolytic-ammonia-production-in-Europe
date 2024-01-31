@@ -17,7 +17,9 @@ _The European ammonia industry is responsible for 36 Mt of carbon dioxide per ye
 
 ### Additional Documentation
 
-- `METADATA.md`: Provides comprehensive details about the model's key parameters and variables.
+- `NOMENCLATURE.md`: Offers a comprehensive glossary of symbols, indices, sets, and terms utilized throughout the research.
+
+- `INPUT_PARAMETERS_METADATA.xlsx`: Contains a detailed Excel spreadsheet presenting the input parameters utilized in the analysis. This spreadsheet includes the names of variables, units of measure, values utilized for sensitivity analysis, and explanatory notes to aid in the interpretation and replication of the research.
 
 ## Prerequisites
 
