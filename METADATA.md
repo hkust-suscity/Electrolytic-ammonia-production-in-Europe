@@ -1,80 +1,52 @@
-# METADATA:
+# Nomenclature
 
-### *Industry Parameters and Characteristics*
+This document outlines the nomenclature used in the research and the accompanying codebase. The following symbols and indices are utilized to model the economic and technical aspects of the transition to low-carbon hydrogen in the European ammonia industry.
 
-**Dh_H2** (kg H2/h): hourly demand of hydrogen 
+## Indices
 
-**Dy_H2** (kg H2/y): annual demand of hydrogen 
+- `t`: Index for time-steps – hours, t ∈{0,1,…,T} with T=8760 (hours in a year)
+- `l`: Index for years, l ∈{0,1,…,L} with L=25 years
 
-### *Technology parameters and characteristics*
+## Sets
 
-1. *ALK electrolyzer*
+- `J`: Set of energy carriers
+- `K`: Set of technologies
 
-**cost_HGU_WE** (EUR/MW): Unit price of utility-scale ALK electrolyzer
+## Energy Carriers
 
-**En_HGU_WE** (MWh/kg H2): Energy demand utility-scale ALK electrolyzer
+- `E`: Electricity
+- `H_2`: Hydrogen
+- `N_2`: Nitrogen
+- `NH_3`: Ammonia
 
-**cost_M_HGU_WE** (%/y): Annual maintenance cost utility-scale ALK electrolyzer
+## Technologies
 
-**L_HGU_WE** (y): Lifetime utility-scale ALK electrolyzer
+- `PV`: Photovoltaic (solar panels)
+- `WT`: Wind Turbine
+- `EL`: Electrolyzer (for hydrogen production)
+- `A`: Air Separator Unit
+- `S`: Ammonia Synthesis Loop (Synloop)
+- `CP`: Hydrogen Compressor
+- `ST`: Hydrogen High-Pressure Storage Tank
+- `B`: Battery Energy Storage System
 
-2. *Solar Photovoltaics*
+## Parameters
 
-**cost_PV_i** (EUR/MW): Unit price of utility-scale solar PV in country i
+- `Ω`: Capacity factor for renewable energies
+- `s`: Solar data (irradiance, availability)
+- `w`: Wind data (speed, availability)
+- `D`: System output demand or requirement
+- `p`: Price of energy carriers
+- `γ`: Carbon footprint associated with energy grids and technologies
+- `c`: Investment cost for technology
+- `v`: Operation and maintenance (O&M) cost for technology
+- `η`: Performance efficiency of technology
 
-**cost_M_PV** (EUR/MW/y): Annual maintenance cost utility-scale solar PV in country i
+## Variables
 
-**A_PV** (m^2/MW): Land area required for 1 MW installation
-
-**L_PV** (y): Lifetime utility-scale solar PV
-
-3. *Wind turbines*
-
-**cost_WT_i** (EUR/MW): Unit price of utility-scale WT
-
-**cost_M_WT** (EUR/MW/y): Annual maintenance cost utility-scale WT
-
-**A_WT** (m^2/MW): Land area required for 1 MW installation
-
-**L_WT** (y): Lifetime utility-scale WT
-
-4. *li-ion batteries*
-
-**cost_batt** (EUR/MWh): Unit price of utility-scale Li-ion batteries
-
-**cost_M_batt** (%): Annual maintenance cost utility-scale Li-ion batteries
-
-**L_batt** (y): Lifetime utility-scale Li-ion batteries
-
-5. *Compressor*
-
-**cost_comp** (EUR/kg H2/h): Unit price of dedicated hydrogen compressor for industrial use
-
-**En_comp** (EUR/kg H2): Energy demand dedicated hydrogen compressor for industrial use
-
-**cost_M_comp** (%): Annual maintenance cost dedicated hydrogen compressor for industrial use
-
-**L_batt** (y): Lifetime dedicated hydrogen compressor for industrial use
-
-6. *(Storage tanks)
-
-**cost_h2stor** (EUR/kg H2): Unit price of dedicated hydrogen storage tank
-
-**cost_M_h2stor** (%): Annual maintenance cost dedicated hydrogen storage tank
-
-**L_h2stor** (y): Lifetime dedicated hydrogen storage tank
-
-### *Other input parameters*
-
-**Bld_prj** (%): Project costs for new installations
-
-**CT** (EUR/kg CO2): EU-ETS price 
-
-### *Regional/country-based parameters*
-
-**land_price_j** (EUR/m^2): Price of land in region j
-
-**CE_el_i** (kg CO2/MWh): Carbon intensity grid electricity in country i 
-
-**price_el_g_i** (EUR/MWh): Grid elecrticity price in country i 
-
+- `U`: Input energy to a technology/process
+- `V`: Output energy from a technology/process
+- `M`: Imported electricity from the grid
+- `P`: Size/capacity of technology
+- `b`: Binary variable for technology selection (1 if selected, 0 otherwise)
+- `y`: ON/OFF scheduling variable for technologies (1 if ON, 0 if OFF)
