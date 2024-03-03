@@ -1,4 +1,6 @@
 # Electrolytic-Ammonia-Production-in-Europe
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10771014.svg)](https://doi.org/10.5281/zenodo.10771014)
+
 
 Welcome to the official GitHub repository for the research article _"Effects of emissions caps on the costs and feasibility of low-carbon hydrogen in the European ammonia industry"_, currently under review at _Nature Communications_.
 
