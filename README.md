@@ -2,7 +2,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10771014.svg)](https://doi.org/10.5281/zenodo.10771014)
 
 
-Welcome to the official GitHub repository for the research article "Effects of emissions caps on the costs and feasibility of low-carbon hydrogen in the European ammonia industry", accepted for publication in Nature Communications on 19 April 2024, with the DOI: 10.1038/s41467-024-48145-z.
+Welcome to the official GitHub repository for the research article "Effects of emissions caps on the costs and feasibility of low-carbon hydrogen in the European ammonia industry", accepted for publication in Nature Communications on 19 April 2024:\
+[DOI: 10.1038/s41467-024-48145-z](https://doi.org/10.1038/s41467-024-48145-z) 
 
 This repository contains all data, code, and references necessary to replicate the main results reported in our research article.
 
@@ -39,15 +40,39 @@ To run the code provided in this repository:
 
 ## Contact Information
 
-For inquiries, data requests, or feedback, please [contact us](mailto:).
+For inquiries, data requests, or feedback, please [contact us](mailto:smingolla@connect.ust.hk).
 
 ## Authors and Affiliations
 
-Authors and affiliations will be updated upon article acceptance.
+Contributors:
+
+- Stefano Mingolla<sup>1*</sup>
+- Paolo Gabrielli<sup>2,3†</sup>
+- Alessandro Manzotti<sup>4,5†</sup>
+- Matthew J. Robson<sup>4†</sup>
+- Kevin Rouwenhorst<sup>6,7,8</sup>
+- Francesco Ciucci<sup>4,9</sup>
+- Giovanni Sansavini<sup>2</sup>
+- Magdalena M. Klemun<sup>10,11*</sup>
+- Zhongming Lu<sup>1,10*</sup>
+
+1. Division of Environment and Sustainability, Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China
+2. Institute of Energy and Process Engineering, ETH Zurich, 8092, Zurich, Switzerland
+3. Department of Global Ecology, Carnegie Institution for Science, Stanford, CA 94305, USA
+4. Department of Mechanical and Aerospace Engineering, Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China
+5. Department of Physics, Technical University of Denmark, Kongens Lyngby, Denmark
+6. Ammonia Energy Association, 77 Sands Street, Brooklyn, NY 11201, USA
+7. Catalytic Processes & Materials, MESA+ Institute for Nanotechnology, Department of Science & Technology, University of Twente, P.O. Box 217, 7500 Enschede, The Netherlands
+8. Koolen Industries, Europalaan 202, 7553 SC Hengelo, The Netherlands
+9. Chair of Electrode Design for Electrochemical Energy Systems, University of Bayreuth, 95448 Bayreuth, Germany
+10. Energy Institute, The Hong Kong University of Science and Technology, Hong Kong SAR, China
+11. Division of Public Policy, Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China
 
 ## Corresponding Author
 
-Details of the corresponding author will be provided upon article acceptance.
+- Stefano Mingolla: smingolla@connect.ust.hk
+- Magdalena M. Klemun: magdalena@ust.hk
+- Zhongming Lu: zhongminglu@ust.hk
 
 [^1]: EMHIRES part 1 --> https://op.europa.eu/en/publication-detail/-/publication/85b2dc7f-aa61-11e6-aab7-01aa75ed71a1/language-en  
 [^2]: EMHIRES part 2 --> https://op.europa.eu/en/publication-detail/-/publication/a6c0cf55-45aa-11e7-aea8-01aa75ed71a1/language-en
