@@ -2,8 +2,9 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10771014.svg)](https://doi.org/10.5281/zenodo.10771014)
 
 
-Welcome to the official GitHub repository for the research article "Effects of emissions caps on the costs and feasibility of low-carbon hydrogen in the European ammonia industry", accepted for publication in Nature Communications on 19 April 2024:\
-[DOI: 10.1038/s41467-024-48145-z](https://doi.org/10.1038/s41467-024-48145-z) 
+Welcome to the official GitHub repository for the research article "Effects of emissions caps on the costs and feasibility of low-carbon hydrogen in the European ammonia industry", accepted for publication in Nature Communications on 19 April 2024.
+
+DOI: To be updated.
 
 This repository contains all data, code, and references necessary to replicate the main results reported in our research article.
 
