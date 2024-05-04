@@ -4,7 +4,7 @@
 
 Welcome to the official GitHub repository for the research article "Effects of emissions caps on the costs and feasibility of low-carbon hydrogen in the European ammonia industry", accepted for publication in Nature Communications on 19 April 2024.
 
-DOI:https://doi.org/10.1038/s41467-024-48145-z
+DOI: https://doi.org/10.1038/s41467-024-48145-z
 
 This repository contains all data, code, and references necessary to replicate the main results reported in our research article.
 
